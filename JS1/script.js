@@ -1,17 +1,20 @@
 function adicionarTarefa() {
-    let mensagem = "Tarefa adicionada com sucesso!";
-    
-    
     let inputTarefa = document.getElementById("inputTarefa")
-    let tarefa = inputTarefa.value
-    document.getElementById("mensagem").textContent = mensagem;
+    let tarefa = inputTarefa.value.trim()
 
-    let listaTarefas = document.getElementById("listaTarefas")
-    let novaTarefa = document.createElement("li")
+    if (tarefa == "") {
+        let erro = "Digite uma tarefa válida."
+        document.getElementById("mensagem").textContent = erro
+    } else {
+        let mensagem = "Tarefa adicionada com sucesso!"
+        document.getElementById("mensagem").textContent = mensagem
+        let listaTarefas = document.getElementById("listaTarefas")
+        let novaTarefa = document.createElement("li")
 
-    novaTarefa.textContent = tarefa 
+        novaTarefa.textContent = tarefa 
 
-    listaTarefas.appendChild(novaTarefa)
-
+        listaTarefas.appendChild(novaTarefa)
+    }   
+    
     inputTarefa.value = ""
 }
