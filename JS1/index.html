@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página inicial</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="icons8-clipboard-color-32.png" type="image/x-icon">
+</head>
+<body>
+  <div class="container">
+    <h1>Boas vindas!</h1>
+    <p>Primeiramente, qual o seu nome?</p>
+    <div class="saudacao" id="mensagemsaudacao">Olá, visitante!</div>
+    <input type="text" id="visitante" placeholder="Digite seu nome...">
+    <button onClick="mudarNome()">Ok</button>
+    <div id="continuar" class="botao">
+      <a href="lista.html" class="button">Continuar</a>
+    </div>
+  </div>
+  <script>
+    function mudarNome(){
+        let visitante = document.getElementById("visitante")
+        let nome = visitante.value
+        document.getElementById("mensagemsaudacao").textContent = "Olá, " + nome +"! Clique em 'Continuar'"
+        var continuar = document.getElementById("continuar");
+        continuar.style.display = (continuar.style.display === "none" || continuar.style.display === "") ? "block" : "none";
+    }
+    
+  
+  </script>
+</body>
+</html>
